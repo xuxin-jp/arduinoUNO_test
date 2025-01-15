@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "patch_demo.h": "c",
+        "eeprom.h": "c"
+    }
+}
