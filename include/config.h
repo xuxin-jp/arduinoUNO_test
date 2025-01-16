@@ -8,14 +8,8 @@
 #ifndef _CONFIG_H_
 #define _CONFIG_H_
 
-#ifdef __cplusplus
-extern "C"
-{
-#endif
-
 #define TEST_YES 0XA5
 #define TEST_NO 0X5A
-#define LED_PIN 13
 
  /*********arduino uno R3 *************
      *          8bit micro               *
@@ -30,12 +24,7 @@ extern "C"
             1 kB EEPROM   0x0400
     ********************************/
 
-#define  INCLUDE_MODULE_PATCH TEST_YES 
-
-
-#ifdef __cplusplus
-}
-
-#endif
+#define INCLUDE_MODULE_PATCH TEST_NO
+#define INCLUDE_MODULE_PWM 0XA5
 
 #endif

@@ -20,6 +20,8 @@ extern "C"
 #define TEST_EXT extern
 #endif
 
+#define LED_PIN 13
+
 /*** ATMega328P Processor: AVR CPU 16 MHz     
     32 kB Flash   0x8000/boot
     2 kB SRAM     0x0800
