@@ -3,13 +3,13 @@
 // author: xuxin
 // DATE:2025-01-09
 //-----------------------------------------------------------------------------
-#if (INCLUDE_MODULE_PATCH == TEST_YES) 
 #include "config.h"
+#if (INCLUDE_MODULE_PATCH == TEST_YES) 
 // #include <EEPROM.h>
 #include "patch_demo.h"
 #include <stdio.h>
 
-#define _OSS_DIAGDISPATCH_C_
+#define _PATCH_DEMO_C_
 
 // __attribute__((section(".fun_section"))) void my_function() {
 // }
