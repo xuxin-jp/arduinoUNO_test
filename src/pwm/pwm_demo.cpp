@@ -11,22 +11,34 @@
 
 // 曲の音階と長さ
 int melody[] = {
-  NOTE_E4, NOTE_E4, NOTE_E4, // ジングルベル ジングルベル
-  NOTE_E4, NOTE_E4, NOTE_E4, // 鈴が鳴る
-  NOTE_E4, NOTE_G4, NOTE_C4, NOTE_D4, NOTE_E4, // 今日も楽しい
-  NOTE_F4, NOTE_F4, NOTE_F4, NOTE_F4,         // 日のように
-  NOTE_F4, NOTE_E4, NOTE_E4, NOTE_E4, NOTE_E4, // 明るく進もう
-  NOTE_E4, NOTE_D4, NOTE_D4, NOTE_E4, NOTE_D4, NOTE_G4 // 鈴が鳴る
+  // NOTE_E4, NOTE_E4, NOTE_E4, // ジングルベル ジングルベル
+  // NOTE_E4, NOTE_E4, NOTE_E4, // 鈴が鳴る
+  // NOTE_E4, NOTE_G4, NOTE_C4, NOTE_D4, NOTE_E4, // 今日も楽しい
+  // NOTE_F4, NOTE_F4, NOTE_F4, NOTE_F4,         // 日のように
+  // NOTE_F4, NOTE_E4, NOTE_E4, NOTE_E4, NOTE_E4, // 明るく進もう
+  // NOTE_E4, NOTE_D4, NOTE_D4, NOTE_E4, NOTE_D4, NOTE_G4 // 鈴が鳴る
+  NOTE_E5, NOTE_E5, NOTE_E5, NOTE_E5, NOTE_E5, NOTE_E5, NOTE_E5,
+  NOTE_G5, // ジングルベル ジングルベル
+  NOTE_C5, NOTE_D5, NOTE_E5, // 鈴が鳴る
+  NOTE_F5, NOTE_F5, NOTE_F5, NOTE_F5, NOTE_F5, 
+  NOTE_E5, NOTE_E5, NOTE_E5, NOTE_E5,         
+  NOTE_D5, NOTE_D5, NOTE_C5, NOTE_D5, NOTE_G5, 
+  NOTE_E5, NOTE_E5, NOTE_E5, NOTE_E5, NOTE_E5, NOTE_E5, NOTE_E5,
+  NOTE_G5, NOTE_C5, NOTE_D5, NOTE_E5, 
+  NOTE_F5, NOTE_F5, NOTE_F5, NOTE_F5, NOTE_F5,
+  NOTE_E5, NOTE_E5, NOTE_E5,
+  NOTE_G5, NOTE_G5,
+  NOTE_F5, NOTE_D5, NOTE_C5
 };
 
 // 音の長さ
 int noteDurations[] = {
-  4, 4, 4, 
-  4, 4, 4,
-  4, 4, 4, 4, 2, // 最初のフレーズ
-  4, 4, 4, 4, 
-  4, 4, 4, 4, 2,
-  4, 4, 4, 4, 4, 2     // 次のフレーズ
+  2, 2, 4, 2, 2, 4, 2, 2, 3, 1, 8,
+  2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+  4, 4,
+  2, 2, 4, 2, 2, 4, 2, 2, 3, 1, 8,
+  2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+  8     // 次のフレーズ
 };
 
 void playNote(int pin, int frequency, unsigned long duration)
@@ -52,9 +64,9 @@ void singPlayer(void)
       
   for (int i = 0; i < minSize; i++) {
     if (noteDurations[i] != 0) {
-        int noteDuration = 1000 / noteDurations[i]; // 音の長さを計算
+        int noteDuration = noteDurations[i] * 100; //1000 / noteDurations[i]; // 音の長さを計算
         playNote(SINGER_PIN, melody[i], noteDuration);  // 音を再生
-        delay(noteDuration * 0.30);                // 音と音の間に少し間をあける
+        delay(noteDuration * 0.50);                // 音と音の間に少し間をあける
         analogWrite(SINGER_PIN, 0);                        // Stop sound
     } else {
         Serial.println("Warning: noteDuration is zero!");
