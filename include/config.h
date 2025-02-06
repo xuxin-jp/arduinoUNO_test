@@ -25,6 +25,7 @@
     ********************************/
 
 #define INCLUDE_MODULE_PATCH TEST_NO
-#define INCLUDE_MODULE_PWM 0XA5
+#define INCLUDE_MODULE_PWM TEST_NO
+#define INCLUDE_MODULE_UTIL_CALLSTACK TEST_YES
 
 #endif
