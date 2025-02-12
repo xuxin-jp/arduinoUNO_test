@@ -34,7 +34,7 @@ void util_callstack_arm_cortexM_bt(uint32_t *stackPtr)
     printf("Stack backtrace:\n");
     UTIL_CALLSTACK_ST_STACK_FRAME* pstFrame = (UTIL_CALLSTACK_ST_STACK_FRAME*)stackPtr;
 
-    for (int depth = 0; depth < UTIL_CALLSTACK_MAX_DEPTH; depth++)
+    for (int depth = 0; depth < UTIL_CALLSTACK_MAX_CALL_DEPTH; depth++)
     {
         if (pstFrame != NULL) 
         {
